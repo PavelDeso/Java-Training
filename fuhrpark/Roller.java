@@ -5,8 +5,10 @@ public class Roller extends Fahrzeug{
 	private String farbe;
 	private Integer zuladungInKG;
 	
-	Roller(String fahrzeugKennung){
+	Roller(String fahrzeugKennung, String farbe, Integer zuladungInKG){
 		super(fahrzeugKennung);
+		this.farbe = farbe;
+		this.zuladungInKG = zuladungInKG;
 		anzahlRoller++;
 	}
 	

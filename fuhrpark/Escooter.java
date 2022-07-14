@@ -12,6 +12,26 @@ public class Escooter extends Roller {
 		anzahlEscooter++;
 	}
 	
+	Escooter(String fahrzeugKennung, String accuType){
+		super(fahrzeugKennung);
+		this.accuType = accuType;
+		anzahlEscooter++;
+	}
+	
+	Escooter(String fahrzeugKennung, String accuType, String kfzKennzeichen){
+		super(fahrzeugKennung);
+		this.accuType = accuType;
+		this.kfzKennzeichen = kfzKennzeichen;
+		anzahlEscooter++;
+	}
+	
+	Escooter(String fahrzeugKennung, String accuType, String kfzKennzeichen, double akkuKapazitaet){
+		super(fahrzeugKennung);
+		this.accuType = accuType;
+		this.kfzKennzeichen = kfzKennzeichen;
+		this.akkuKapazitaet = akkuKapazitaet;
+		anzahlEscooter++;
+	}
 	
 	public Integer getAnzahlEscooter() {
 		return anzahlEscooter;
