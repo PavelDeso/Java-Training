@@ -7,9 +7,7 @@ public class ElektroPKW extends PKW {
     ElektroPKW(String fahrzeugKennung){
     	super(fahrzeugKennung);
     }
-    
-    
-   
+       
     ElektroPKW(String fahrzeugKennung, int anzahlMaxInsassen, int ladestand){
     	super(fahrzeugKennung, anzahlMaxInsassen);
     	this.ladestand = ladestand;
