@@ -1,32 +1,25 @@
 package fuhrpark;
 public class PKW extends Fahrzeug {
-    private String kfzKennzeichen;
-    private Integer anzahlTueren;
+	private static int anzahlPKW = 0;
+	private Integer anzahlTueren;
     private Integer anzahlMaxInsassen;
-      
-    PKW(String fahrzeugKennung){
-    	super(fahrzeugKennung);
+    private String kfzKennzeichen;
+    private String farbe;
+    
+    PKW(String fahrzeugTyp, String fahrzeugKennung){
+    	super(fahrzeugTyp, fahrzeugKennung);
+    	setAnzahlPKW(getAnzahlPKW() + 1);
     }
     
     
-    PKW(String fahrzeugKennung, int anzahlMaxInsassen){
-    	super(fahrzeugKennung);
-    	this.anzahlMaxInsassen = anzahlMaxInsassen;
-    }
-    
-    PKW(String fahrzeugKennung, int anzahlMaxInsassen, int anzahlTueren){
-    	super(fahrzeugKennung);
-    	this.anzahlMaxInsassen = anzahlMaxInsassen;
-    	this.anzahlTueren = anzahlTueren;
-    }
-    
-    PKW(String fahrzeugKennung, int anzahlMaxInsassen, int anzahlTueren, String kfzKennzeichen){
-    	super(fahrzeugKennung);
+    PKW(String fahrzeugTyp, String fahrzeugKennung, double kaufpreis, boolean verfuegbar,  int anzahlMaxInsassen, int anzahlTueren, String kfzKennzeichen, String farbe){
+    	super(fahrzeugTyp, fahrzeugKennung, kaufpreis, verfuegbar);
     	this.anzahlMaxInsassen = anzahlMaxInsassen;
     	this.anzahlTueren = anzahlTueren;
     	this.kfzKennzeichen = kfzKennzeichen;
+    	this.setFarbe(farbe);
+    	setAnzahlPKW(getAnzahlPKW() + 1);
     }
-    
     
     
     public String getKfzKennzeichen() {
@@ -47,4 +40,20 @@ public class PKW extends Fahrzeug {
     public void setAnzahlMaxInsassen(Integer anzahlMaxInsassen) {
         this.anzahlMaxInsassen = anzahlMaxInsassen;
     }
+	public String getFarbe() {
+		return farbe;
+	}
+	public void setFarbe(String farbe) {
+		this.farbe = farbe;
+	}
+
+
+	public static int getAnzahlPKW() {
+		return anzahlPKW;
+	}
+
+
+	public static void setAnzahlPKW(int anzahlPKW) {
+		PKW.anzahlPKW = anzahlPKW;
+	}
 }

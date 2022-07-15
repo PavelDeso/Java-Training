@@ -1,13 +1,23 @@
 package fuhrpark;
 public class LKW  extends Fahrzeug{
-    private String kfzKennzeichen;
+	private static int anzahlLKW = 0;
+	private String kfzKennzeichen;
     private double zulaessigesGesamtgewicht;
     private double ladeVolume;
     private boolean gefahrengut;
     private boolean kuehlung;
+    private String kuehlungDeutsch;
+    private String farbe;
     
-    LKW(String fahrzeugKennung){
-    	super(fahrzeugKennung);
+    LKW(String fahrzeugTyp, String fahrzeugKennung, double kaufpreis, boolean verfuegbar, double zulaessigesGesamtgewicht, double ladeVolume, boolean gefahrengut, boolean kuehlung, String kfzKennzeichen, String farbe){
+    	super(fahrzeugTyp, fahrzeugKennung, kaufpreis, verfuegbar);
+    	this.zulaessigesGesamtgewicht = zulaessigesGesamtgewicht;
+    	this.ladeVolume = ladeVolume;
+    	this.gefahrengut = gefahrengut;
+    	this.kuehlung = kuehlung;
+    	this.kfzKennzeichen = kfzKennzeichen;
+    	this.farbe = farbe;
+    	setAnzahlLKW(getAnzahlLKW() + 1);
     }
     
     
@@ -41,4 +51,35 @@ public class LKW  extends Fahrzeug{
     public void setKuehlung(boolean kuehlung) {
         this.kuehlung = kuehlung;
     }
+
+
+	public String getFarbe() {
+		return farbe;
+	}
+
+
+	public void setFarbe(String farbe) {
+		this.farbe = farbe;
+	}
+	
+	public String ausgabeKuehlungDeutsch(boolean kuehlung) {
+		if (kuehlung == true) {
+			kuehlungDeutsch = "Ja";
+		}
+		else {kuehlungDeutsch = "Nein";
+		
+		}
+		return kuehlungDeutsch;
+	}
+
+
+	public static int getAnzahlLKW() {
+		return anzahlLKW;
+	}
+
+
+	public static void setAnzahlLKW(int anzahlLKW) {
+		LKW.anzahlLKW = anzahlLKW;
+	}
+	
 }
